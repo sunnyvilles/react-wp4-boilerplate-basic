@@ -1,7 +1,7 @@
 const path = require('path');
 const htmlWP = require('html-webpack-plugin');
 
-module.exports({
+module.exports = {
 	entry:'./src',
 	output: {
 		path: path.join(__dirname + '/dist'),
@@ -13,11 +13,16 @@ module.exports({
 		rules:[
 			{
 				test:/\.js$/, //looks at jsx also
-				exclude: 'node_modules',
+				exclude: /node_modules/,
 				use:{
 					loader: 'babel-loader'
 				}
 			}
 		]
-	}
-})
+	},
+	plugins:[
+		new htmlWP({
+			template:'./src/index.html'
+		})
+	]
+}
