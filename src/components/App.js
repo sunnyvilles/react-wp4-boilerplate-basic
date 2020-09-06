@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class App extends Component{
-	render (){
+function App() {
+
 		return <div>
-					<h1>REACT APP !</h1>
+					<h1>Speed typing Game</h1>
 				</div>
-	}
+	
 }
 
 export default App;
